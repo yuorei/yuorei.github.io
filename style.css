@@ -5,12 +5,19 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 /* ページ全体のスタイル */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ヘッダーのスタイル */
@@ -51,6 +58,7 @@ main {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  overflow: hidden;
 }
 
 section {
@@ -91,6 +99,7 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
+  margin-top: auto;
 }
 
 /* レスポンシブデザイン */
@@ -98,6 +107,11 @@ footer {
   header {
     flex-direction: column;
     align-items: center;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
   }
 
   nav {
@@ -112,6 +126,44 @@ footer {
   nav li {
     margin-right: 0;
     margin-bottom: 10px;
+  }
+
+  main {
+    padding: 15px;
+    padding-bottom: 10px;
+  }
+
+  section {
+    margin-bottom: 10px;
+  }
+
+  main section:last-child,
+  #profile {
+    margin-bottom: 0;
+  }
+
+  section h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  #social {
+    padding: 30px 15px;
+  }
+
+  #social h2 {
+    margin-bottom: 30px;
+  }
+
+  .social-icons a {
+    width: 60px;
+    height: 60px;
+    margin: 0 15px;
+  }
+
+  .social-icons a img {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -272,4 +324,26 @@ section {
 
 .fa-github:before {
   content: "\f09b";
+}
+
+/* モバイル用SNSスタイル（グローバルスタイルを上書き） */
+@media (max-width: 600px) {
+  #social {
+    padding: 20px 15px;
+  }
+
+  #social h2 {
+    margin-bottom: 20px;
+  }
+
+  .social-icons a {
+    width: 60px;
+    height: 60px;
+    margin: 0 15px;
+  }
+
+  .social-icons a img {
+    width: 60px;
+    height: 60px;
+  }
 }
